@@ -1,0 +1,32 @@
+{
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+      "noEmit": true,          // We need to emit for Functions Framework
+      "rootDir": "../",         // Source directory
+      "allowImportingTsExtensions": true, // Not needed for node
+      "paths": {
+        "@shared/*": ["../shared/*"] // Adjust shared path relative to functions
+      },
+      "module": "NodeNext",
+      "esModuleInterop": true,
+      "moduleResolution": "nodenext",
+      "noImplicitReturns": true,
+      "noUnusedLocals": true,
+      "outDir": "functions/lib",
+      "sourceMap": true,
+      "strict": false,
+      "noImplicitAny": false,
+      "target": "es2017"
+    },
+    "compileOnSave": true,
+    "include": [
+        "src/**/*",
+        "functions/src",
+        "../shared/**/*"  // Include shared code
+    ],
+    "exclude": [
+      "node_modules",
+      "dist",
+      "**/*.test.ts"
+    ]
+  }
